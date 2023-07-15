@@ -16,7 +16,7 @@ namespace ETradeAPI.Persistance
             
             services.AddSingleton<IProductService, ProductService>();
             services.AddDbContext<ETradeAPIDbContext>(options => options.UseNpgsql(
-               Configuration.ConnectionString));    
+               Configuration.ConnectionString));
         }
     }
 }
