@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ETradeAPI.Infrastructure/1.0.0": {
+        "dependencies": {
+          "ETradeAPI.Application": "1.0.0"
+        },
+        "runtime": {
+          "ETradeAPI.Infrastructure.dll": {}
+        }
+      },
+      "ETradeAPI.Application/1.0.0": {
+        "dependencies": {
+          "ETradeAPI.Domain": "1.0.0"
+        },
+        "runtime": {
+          "ETradeAPI.Application.dll": {}
+        }
+      },
+      "ETradeAPI.Domain/1.0.0": {
+        "runtime": {
+          "ETradeAPI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ETradeAPI.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ETradeAPI.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ETradeAPI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
