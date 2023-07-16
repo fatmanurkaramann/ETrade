@@ -21,21 +21,41 @@ namespace ETradeAPI.Persistance.Repositories
 
         public DbSet<T> Table => _dbContext.Set<T>();
 
-        public IQueryable<T> GetAll() => Table;
-
-        public IQueryable<T> GetWhere(System.Linq.Expressions.Expression<Func<T, bool>> method)
+        public IQueryable<T> GetAll(bool tracking = true)
         {
-            return Table.Where(method);
+            //optimizasyon işlemi
+            var query = Table.AsQueryable();
+            if (!tracking)
+            {
+                query = query.AsNoTracking();
+            }
+            return query;
         }
 
-        public async Task<T> GetSingleAsync(System.Linq.Expressions.Expression<Func<T, bool>> method)
+        public IQueryable<T> GetWhere(System.Linq.Expressions.Expression<Func<T, bool>> method, bool tracking = true)
         {
-            return await Table.FirstOrDefaultAsync(method);
+            var query = Table.Where(method);
+            if (!tracking)
+                query = query.AsNoTracking();
+
+            return query;
         }
 
-        public async Task<T> GetByIdAsync(string id)
+        public async Task<T> GetSingleAsync(System.Linq.Expressions.Expression<Func<T, bool>> method, bool tracking = true)
         {
-            return await Table.FirstOrDefaultAsync(p => p.Id == Guid.Parse(id));
+            var query = Table.AsQueryable();
+            if (!tracking)
+                query = query.AsNoTracking();
+
+            return await query.FirstOrDefaultAsync(method);
+        }
+
+        public async Task<T> GetByIdAsync(string id, bool tracking = true)
+        {
+            var query = Table.AsQueryable();
+            if (!tracking)
+                query = query.AsNoTracking();
+            return await query.FirstOrDefaultAsync(x => x.Id == Guid.Parse(id));
         }
     }
 }
