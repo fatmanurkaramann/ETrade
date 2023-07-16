@@ -21,16 +21,7 @@ namespace ETradeAPI.API.Controllers
         [HttpGet]
         public async Task GetProducts()
         {
-            //await _writeRepo.AddRangeAsync(new()
-            // {
-            //     new() {Id=Guid.NewGuid(),Name="ürün1",Price=100,Stock=10,CreatedDate=DateTime.UtcNow},
-            //     new() {Id=Guid.NewGuid(),Name="ürün1",Price=100,Stock=10,CreatedDate=DateTime.UtcNow}
-            // });
-            //  await _writeRepo.SaveAsync();
-
-           var p = await _readRepo.GetByIdAsync("c87f361a-e16d-438b-8d86-8d0d730acb09");
-            p.Name = "test";
-            await _writeRepo.SaveAsync();
+            _writeRepo.AddAsync(new() { Name="ürün",Price=10.5F,Stock=10});
         }
     }
 }
