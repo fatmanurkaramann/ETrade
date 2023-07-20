@@ -1,7 +1,5 @@
-﻿using ETradeAPI.Application.Abstraction;
-using ETradeAPI.Application.Repositories;
+﻿using ETradeAPI.Application.Repositories;
 using ETradeAPI.Domain.Entities.Identity;
-using ETradeAPI.Persistance.Concretes;
 using ETradeAPI.Persistance.Contexts;
 using ETradeAPI.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;

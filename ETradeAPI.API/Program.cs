@@ -1,17 +1,36 @@
 using ETradeAPI.Application;
+using ETradeAPI.Infrastructure;
 using ETradeAPI.Persistance;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddPersistanceServices();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddAplicationServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer("Admin",options =>
+    {
+        options.TokenValidationParameters = new()
+        {
+            ValidateAudience = true, //oluþturulacak token deðerinin hangi siteler kullanýr --site
+            ValidateIssuer = true, //oluþturulacak tokený kimin daðýttýðýný ifade edeceðimiz alan__bizim api
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true, //üretilecek token deðerini uyg ait deðer olduðunu ifade eden key
 
+            ValidAudience = builder.Configuration["Token:Audience"],
+            ValidIssuer= builder.Configuration["Token:Issuer"],
+            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+        };
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,7 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

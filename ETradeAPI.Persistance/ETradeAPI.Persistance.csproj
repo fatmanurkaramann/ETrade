@@ -26,4 +26,8 @@
     <ProjectReference Include="..\ETradeAPI.Application\ETradeAPI.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Concretes\" />
+  </ItemGroup>
+
 </Project>

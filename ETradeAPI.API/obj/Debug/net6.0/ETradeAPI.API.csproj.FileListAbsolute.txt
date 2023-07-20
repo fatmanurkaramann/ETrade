@@ -60,3 +60,12 @@ C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\ETradeAPI.Infrastructure.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\ETradeAPI.Infrastructure.pdb
