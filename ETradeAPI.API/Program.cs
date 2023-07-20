@@ -1,9 +1,11 @@
+using ETradeAPI.Application;
 using ETradeAPI.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddPersistanceServices();
+builder.Services.AddAplicationServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -40,3 +40,6 @@ C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Npgsql.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

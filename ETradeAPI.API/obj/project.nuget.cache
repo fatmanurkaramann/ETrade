@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NN4S5uJXIByUg2GhQXHmkgF3IrQDmDFHDp2W0jUVTHja1A3unO1BFLgkWC4dqgO4+CHRqb1ALR4RuMKqTQ0CXw==",
+  "dgSpecHash": "/Nsn8XsYXZdgzBcpCV+XbOjQ6Ky93cU1n6IZQzdQC7LzVmxwD0fNXV17b60WdIBu9llEC5IC2pWI691XjwlynQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\ETradeAPI.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fato\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.2\\microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.2\\microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.2\\microsoft.entityframeworkcore.analyzers.6.0.2.nupkg.sha512",
