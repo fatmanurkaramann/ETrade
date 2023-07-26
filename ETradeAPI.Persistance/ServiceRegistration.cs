@@ -1,7 +1,9 @@
-﻿using ETradeAPI.Application.Repositories;
+﻿using ETradeAPI.Application.Abstraction.Services;
+using ETradeAPI.Application.Repositories;
 using ETradeAPI.Domain.Entities.Identity;
 using ETradeAPI.Persistance.Contexts;
 using ETradeAPI.Persistance.Repositories;
+using ETradeAPI.Persistance.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,6 +37,7 @@ namespace ETradeAPI.Persistance
             services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();
+            services.AddScoped<IUserService, UserService>();
 
         }
     }
