@@ -1,4 +1,5 @@
 ﻿using ETradeAPI.Application.Features.Commands.AppUserFeatures.CreateUser;
+using ETradeAPI.Application.Features.Commands.AppUserFeatures.GoogleLogin;
 using ETradeAPI.Application.Features.Commands.AppUserFeatures.LoginUser;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -27,6 +28,12 @@ namespace ETradeAPI.API.Controllers
         public async Task<IActionResult> Login(LoginUserCommandRequest request)
         {
            LoginUserCommandResponse res = await _mediator.Send(request);
+            return Ok(res);
+        }
+        [HttpPost("google-login")]
+        public async Task<IActionResult> GoogleLogin(GoogleLoginCommandRequest request)
+        {
+            GoogleLoginCommandResponse res = await _mediator.Send(request);
             return Ok(res);
         }
     }
