@@ -43,6 +43,10 @@ namespace ETradeAPI.API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddProducts(CreateProductCommandRequest req)
         {
+            if (ModelState.IsValid)
+            {
+
+            }
             CreateProductCommandResponse res = await _mediatr.Send(req);
             return StatusCode((int)HttpStatusCode.Created);
         }

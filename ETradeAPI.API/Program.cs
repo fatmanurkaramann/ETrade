@@ -1,6 +1,9 @@
 using ETradeAPI.Application;
+using ETradeAPI.Application.Validators.Products;
 using ETradeAPI.Infrastructure;
+using ETradeAPI.Infrastructure.Filters;
 using ETradeAPI.Persistance;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -22,12 +25,14 @@ builder.Services.AddPersistanceServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddAplicationServices();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt=>opt.Filters.Add<ValidationFilter>())
+    .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>())
+    .ConfigureApiBehaviorOptions(opt=>opt.SuppressModelStateInvalidFilter=true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer("Admin",options =>
+    .AddJwtBearer("Admin", options =>
     {
         options.TokenValidationParameters = new()
         {
@@ -37,8 +42,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true, //üretilecek token deðerini uyg ait deðer olduðunu ifade eden key
 
             ValidAudience = builder.Configuration["Token:Audience"],
-            ValidIssuer= builder.Configuration["Token:Issuer"],
-            IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
+            ValidIssuer = builder.Configuration["Token:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"])),
         };
     });
 var app = builder.Build();

@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HxVVIpV7Kz3RmLrAVdO6kMQAb9gqeWKK6ghwMImooNaAI02FNq0WdXm4PxCMK7MT4pfEFuc4BIZy6Emk5GQ11A==",
+  "dgSpecHash": "3D3dk8JN2C4cJutxI+0rGBA9oCMPG+N0ZSsr5YOfvhuZefS+Br9w5acFEt3G0BIh8PTy/OIhJbj0YzFNSgj8zA==",
   "success": true,
   "projectFilePath": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\ETradeAPI.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fato\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\fato\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.7.1\\fluentvalidation.dependencyinjectionextensions.11.7.1.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\google.apis\\1.61.0\\google.apis.1.61.0.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\google.apis.auth\\1.61.0\\google.apis.auth.1.61.0.nupkg.sha512",
     "C:\\Users\\fato\\.nuget\\packages\\google.apis.core\\1.61.0\\google.apis.core.1.61.0.nupkg.sha512",
