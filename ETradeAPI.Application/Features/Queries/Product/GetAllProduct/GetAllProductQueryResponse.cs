@@ -9,6 +9,6 @@ namespace ETradeAPI.Application.Features.Queries.Product.GetAllProduct
 {
     public class GetAllProductQueryResponse
     {
-        public List<ETradeAPI.Domain.Entities.Product> Products { get; set; }
+        public Object Products { get; set; }
     }
 }

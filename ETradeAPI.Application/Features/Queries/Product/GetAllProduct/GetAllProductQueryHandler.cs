@@ -21,7 +21,15 @@ namespace ETradeAPI.Application.Features.Product.Queries.GetAllProduct
 
         public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
-            var product=_productReadRepository.GetAll(false).ToList();
+            var product = _productReadRepository.GetAll(false).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreatedDate,
+                p.UpdatedDate,
+            }).ToList();
 
             return new() { Products = product};
         }

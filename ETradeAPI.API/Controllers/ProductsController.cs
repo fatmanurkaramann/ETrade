@@ -23,9 +23,8 @@ namespace ETradeAPI.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts([FromQuery] GetAllProductQueryRequest req)
         {
-            GetAllProductQueryRequest req = new GetAllProductQueryRequest();
             GetAllProductQueryResponse res = await _mediatr.Send(req);
             return Ok(res);
         }
