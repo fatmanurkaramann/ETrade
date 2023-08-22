@@ -10,5 +10,6 @@ namespace ETradeAPI.Application.Features.Queries.Product.GetAllProduct
     public class GetAllProductQueryResponse
     {
         public Object Products { get; set; }
+        public int TotalCount { get; set; }
     }
 }

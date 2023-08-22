@@ -21,6 +21,7 @@ namespace ETradeAPI.Application.Features.Product.Queries.GetAllProduct
 
         public async Task<GetAllProductQueryResponse> Handle(GetAllProductQueryRequest request, CancellationToken cancellationToken)
         {
+            var totalCount = _productReadRepository.GetAll(false).Count();
             var product = _productReadRepository.GetAll(false).Select(p => new
             {
                 p.Id,
@@ -29,9 +30,9 @@ namespace ETradeAPI.Application.Features.Product.Queries.GetAllProduct
                 p.Price,
                 p.CreatedDate,
                 p.UpdatedDate,
-            }).ToList();
+            }).Skip(request.Page*request.Size).Take(request.Size).ToList();
 
-            return new() { Products = product};
+            return new() { Products = product,TotalCount=totalCount};
         }
     }
 }
