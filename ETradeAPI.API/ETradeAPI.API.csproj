@@ -25,4 +25,8 @@
     <ProjectReference Include="..\ETradeAPI.Persistance\ETradeAPI.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

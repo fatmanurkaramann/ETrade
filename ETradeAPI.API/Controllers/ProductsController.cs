@@ -16,10 +16,12 @@ namespace ETradeAPI.API.Controllers
     {
 
         readonly IMediator _mediatr;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductsController(IMediator mediatr)
+        public ProductsController(IMediator mediatr, IWebHostEnvironment webHostEnvironment)
         {
             _mediatr = mediatr;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet]
@@ -48,6 +50,27 @@ namespace ETradeAPI.API.Controllers
             }
             CreateProductCommandResponse res = await _mediatr.Send(req);
             return StatusCode((int)HttpStatusCode.Created);
+        }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Upload()
+        {
+            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "resources/product-images");
+            if (!Directory.Exists(uploadPath))
+            {
+                Directory.CreateDirectory(uploadPath);
+            }
+            Random random = new Random();
+            foreach (IFormFile file in Request.Form.Files)
+            {
+                string fullPath = Path.Combine(uploadPath,$"{random.Next()}{Path.GetExtension(file.FileName)}");
+
+                using FileStream fileStream = new FileStream(fullPath, FileMode.Create,FileAccess.Write,FileShare.None,
+                    1024*1024,useAsync:false);
+                await file.CopyToAsync(fileStream);
+                await fileStream.FlushAsync();
+            }
+            return Ok();
+               
         }
 
 

@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "CrZ9qyJO5AVcAUXKAWmcaPozPWGnx1ydbSvUmLi7IC8=",
+  "Hash": "H/sMqswL5p4O6AHt98+VE6CMNCXSQFZBvJai0HYQ60E=",
   "Source": "ETradeAPI.API",
   "BasePath": "_content/ETradeAPI.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ETradeAPI.API\\wwwroot",
+      "Source": "ETradeAPI.API",
+      "ContentRoot": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\",
+      "BasePath": "_content/ETradeAPI.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

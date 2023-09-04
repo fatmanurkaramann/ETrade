@@ -77,3 +77,4 @@ C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\ETradeAPI.API.staticwebassets.runtime.json
