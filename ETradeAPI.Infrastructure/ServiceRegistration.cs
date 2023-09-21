@@ -1,4 +1,6 @@
 ﻿using ETradeAPI.Application.Abstraction.Token;
+using ETradeAPI.Application.Services;
+using ETradeAPI.Infrastructure.Services;
 using ETradeAPI.Infrastructure.Services.Token;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -15,6 +17,7 @@ namespace ETradeAPI.Infrastructure
     {
         public static void AddInfrastructureServices(this IServiceCollection services)
         {
+            services.AddScoped<IFileService, FileService>();
             services.AddScoped<ITokenHandler, TokenHandler>();
         }
     }

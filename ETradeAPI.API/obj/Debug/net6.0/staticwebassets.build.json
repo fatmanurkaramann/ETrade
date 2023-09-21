@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "H/sMqswL5p4O6AHt98+VE6CMNCXSQFZBvJai0HYQ60E=",
+  "Hash": "tfKE0v8KwxZPImY6C9xks5yGxK8Dm9yZZkEgfVVjT1I=",
   "Source": "ETradeAPI.API",
   "BasePath": "_content/ETradeAPI.API",
   "Mode": "Default",
@@ -15,5 +15,40 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\resources\\product-images\\1151885095.png",
+      "SourceId": "ETradeAPI.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\",
+      "BasePath": "_content/ETradeAPI.API",
+      "RelativePath": "resources/product-images/1151885095.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resources\\product-images\\1151885095.png"
+    },
+    {
+      "Identity": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\resources\\product-images\\1844319136.jfif",
+      "SourceId": "ETradeAPI.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\",
+      "BasePath": "_content/ETradeAPI.API",
+      "RelativePath": "resources/product-images/1844319136.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resources\\product-images\\1844319136.jfif"
+    }
+  ]
 }

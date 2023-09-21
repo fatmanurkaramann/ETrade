@@ -3,6 +3,7 @@ using ETradeAPI.Application.Features.Commands.Product.RemoveProduct;
 using ETradeAPI.Application.Features.Commands.Product.UpdateProduct;
 using ETradeAPI.Application.Features.Queries.Product.GetAllProduct;
 using ETradeAPI.Application.Features.Queries.Product.GetByIdProduct;
+using ETradeAPI.Application.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,11 +18,12 @@ namespace ETradeAPI.API.Controllers
 
         readonly IMediator _mediatr;
         private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public ProductsController(IMediator mediatr, IWebHostEnvironment webHostEnvironment)
+        private readonly IFileService _fileService;
+        public ProductsController(IMediator mediatr, IWebHostEnvironment webHostEnvironment, IFileService fileService)
         {
             _mediatr = mediatr;
             _webHostEnvironment = webHostEnvironment;
+            _fileService = fileService;
         }
 
         [HttpGet]
@@ -54,23 +56,8 @@ namespace ETradeAPI.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload()
         {
-            string uploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "resources/product-images");
-            if (!Directory.Exists(uploadPath))
-            {
-                Directory.CreateDirectory(uploadPath);
-            }
-            Random random = new Random();
-            foreach (IFormFile file in Request.Form.Files)
-            {
-                string fullPath = Path.Combine(uploadPath,$"{random.Next()}{Path.GetExtension(file.FileName)}");
-
-                using FileStream fileStream = new FileStream(fullPath, FileMode.Create,FileAccess.Write,FileShare.None,
-                    1024*1024,useAsync:false);
-                await file.CopyToAsync(fileStream);
-                await fileStream.FlushAsync();
-            }
+            await _fileService.UploadAsync("resource/product-images", Request.Form.Files);
             return Ok();
-               
         }
 
 
