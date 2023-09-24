@@ -21,8 +21,8 @@ namespace ETradeAPI.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateUserCommandRequest request)
         {
-            await _mediator.Send(request);
-            return Ok();
+           CreateUserCommandResponse res = await _mediator.Send(request);
+            return Ok(res);
         }
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginUserCommandRequest request)

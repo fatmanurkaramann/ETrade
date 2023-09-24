@@ -8,7 +8,7 @@ namespace ETradeAPI.Application.Features.Commands.AppUserFeatures.CreateUser
 {
     public class CreateUserCommandResponse
     {
-        public bool Succeded { get; set; }
-        public string Message { get; set; }
+        public bool Succeded { get; set; }=true;
+        public string Message { get; set; } = "Kullanıcı kaydı başarıyla oluştu";
     }
 }

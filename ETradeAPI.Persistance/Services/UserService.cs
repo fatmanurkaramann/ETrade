@@ -38,5 +38,10 @@ namespace ETradeAPI.Persistance.Services
             return res;
 
         }
+
+        public Task<IdentityResult> CreateAsync(CreateUser createUser, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
