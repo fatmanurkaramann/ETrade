@@ -53,15 +53,12 @@ namespace ETradeAPI.Persistance.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FileName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Path")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Storage")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -204,6 +201,9 @@ namespace ETradeAPI.Persistance.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
                         .HasColumnType("text");
 
                     b.Property<float>("Price")

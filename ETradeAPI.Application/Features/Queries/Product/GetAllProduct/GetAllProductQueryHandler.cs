@@ -30,6 +30,7 @@ namespace ETradeAPI.Application.Features.Product.Queries.GetAllProduct
                 p.Price,
                 p.CreatedDate,
                 p.UpdatedDate,
+                p.Path
             }).Skip(request.Page*request.Size).Take(request.Size).ToList();
 
             return new() { Products = product,TotalCount=totalCount};

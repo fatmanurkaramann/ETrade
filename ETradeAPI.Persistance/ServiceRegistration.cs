@@ -1,5 +1,6 @@
 ﻿using ETradeAPI.Application.Abstraction.Services;
 using ETradeAPI.Application.Repositories;
+using ETradeAPI.Application.Repositories.File;
 using ETradeAPI.Domain.Entities.Identity;
 using ETradeAPI.Persistance.Contexts;
 using ETradeAPI.Persistance.Repositories;
@@ -38,6 +39,8 @@ namespace ETradeAPI.Persistance
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IFileReadRepository, FileReadRepository>();
+
 
         }
     }

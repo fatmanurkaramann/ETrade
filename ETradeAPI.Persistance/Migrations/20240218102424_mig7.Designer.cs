@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ETradeAPI.Persistance.Migrations
 {
     [DbContext(typeof(ETradeAPIDbContext))]
-    [Migration("20240218074749_mig5")]
-    partial class mig5
+    [Migration("20240218102424_mig7")]
+    partial class mig7
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,29 @@ namespace ETradeAPI.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("ETradeAPI.Domain.Entities.File", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Storage")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Files");
                 });
 
             modelBuilder.Entity("ETradeAPI.Domain.Entities.Identity.AppRole", b =>
@@ -180,6 +203,9 @@ namespace ETradeAPI.Persistance.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
                         .HasColumnType("text");
 
                     b.Property<float>("Price")

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ETradeAPI.Application\ETradeAPI.Application.csproj" />
+    <ProjectReference Include="..\ETradeAPI.Persistance\ETradeAPI.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1570,6 +1570,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "ETradeAPI.Application": "1.0.0",
+          "ETradeAPI.Persistance": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.20"
         },
         "compile": {

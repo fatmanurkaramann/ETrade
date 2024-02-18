@@ -299,6 +299,9 @@
             "projectReferences": {
               "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.Application\\ETradeAPI.Application.csproj": {
                 "projectPath": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.Application\\ETradeAPI.Application.csproj"
+              },
+              "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.Persistance\\ETradeAPI.Persistance.csproj": {
+                "projectPath": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.Persistance\\ETradeAPI.Persistance.csproj"
               }
             }
           }

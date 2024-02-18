@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ETradeAPI.Persistance.Migrations
 {
     [DbContext(typeof(ETradeAPIDbContext))]
-    [Migration("20240218075152_mig7")]
-    partial class mig7
+    [Migration("20240218101441_mig4")]
+    partial class mig4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,15 +55,12 @@ namespace ETradeAPI.Persistance.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("FileName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Path")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Storage")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -204,8 +201,14 @@ namespace ETradeAPI.Persistance.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("FileName")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Path")
                         .HasColumnType("text");
 
                     b.Property<float>("Price")

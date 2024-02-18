@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LFVmvhJUQoL2eCGcjuSmiKpbPHU3D+RL9iMTEPcLVIM=",
+  "Hash": "qR+F4ZytbXHpyDJlloW3iCgiJqNKBaZp2i7uIp542Sk=",
   "Source": "ETradeAPI.API",
   "BasePath": "_content/ETradeAPI.API",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\resources\\files\\WhatsApp Image 2024-02-03 at 22.14.11.jpeg",
+      "SourceId": "ETradeAPI.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\",
+      "BasePath": "_content/ETradeAPI.API",
+      "RelativePath": "resources/files/WhatsApp Image 2024-02-03 at 22.14.11.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\resources\\files\\WhatsApp Image 2024-02-03 at 22.14.11.jpeg"
+    },
     {
       "Identity": "C:\\Users\\fato\\Desktop\\Yazılım\\C#\\ETrade\\ETradeAPI\\ETradeAPI.API\\wwwroot\\resources\\product-images\\1151885095.png",
       "SourceId": "ETradeAPI.API",

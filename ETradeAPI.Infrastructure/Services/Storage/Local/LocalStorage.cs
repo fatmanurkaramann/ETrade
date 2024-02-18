@@ -1,20 +1,26 @@
 ﻿using ETradeAPI.Application.Abstraction.Storage.Local;
+using ETradeAPI.Domain.Entities;
+using ETradeAPI.Persistance.Contexts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using System.IO;
+
 
 namespace ETradeAPI.Infrastructure.Services.Storage.Local
 {
     public class LocalStorage : ILocalStorage
     {
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ETradeAPIDbContext _dbContext;
 
-        public LocalStorage(IWebHostEnvironment webHostEnvironment)
+        public LocalStorage(IWebHostEnvironment webHostEnvironment, ETradeAPIDbContext dbContext)
         {
             _webHostEnvironment = webHostEnvironment;
+            _dbContext = dbContext;
         }
 
         public async Task DeleteAsync(string pathOrContainerName, string fileName)
-           => File.Delete($"{pathOrContainerName}\\{fileName}");
+           => System.IO.File.Delete($"{pathOrContainerName}\\{fileName}");
 
         public List<string> GetAllAsync(string pathOrContainerName)
         {
@@ -23,7 +29,7 @@ namespace ETradeAPI.Infrastructure.Services.Storage.Local
         }
 
         public bool HasFile(string pathOrContainerName, string fileName)
-           => File.Exists($"{pathOrContainerName}\\{fileName}");
+           => System.IO.File.Exists($"{pathOrContainerName}\\{fileName}");
         private async Task<bool> CopyFile(string path, IFormFile file)
         {
             try
@@ -52,11 +58,23 @@ namespace ETradeAPI.Infrastructure.Services.Storage.Local
             List<(string filename, string path)> datas = new();
             foreach (IFormFile file in files)
             {
+                using (var memoryStream = new MemoryStream())
+                {
+                    bool result = await CopyFile($"{uploadPath}\\{file.Name}", file);
+                    datas.Add((file.Name, $"{uploadPath}\\{file.Name}"));
+                    await file.CopyToAsync(memoryStream);
+                    var uploadedFile = new ETradeAPI.Domain.Entities.File
+                    {
+                        FileName = file.Name,
+                        Path = Convert.ToBase64String(memoryStream.ToArray())
 
-                bool result = await CopyFile($"{uploadPath}\\{file.Name}", file);
-                datas.Add((file.Name, $"{uploadPath}\\{file.Name}"));
+                    };
+                    _dbContext.Files.Add(uploadedFile);
+                    await _dbContext.SaveChangesAsync();
+                }
             }
             return null;
         }
     }
+    
 }
