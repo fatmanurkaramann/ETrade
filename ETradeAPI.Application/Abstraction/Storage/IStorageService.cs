@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ETradeAPI.Application.Abstraction.Storage
 {
-    internal class IStorageService
+    public interface IStorageService:IStorage
     {
+        public string StorageName { get;}
     }
 }

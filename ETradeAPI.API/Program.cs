@@ -2,6 +2,7 @@ using ETradeAPI.Application;
 using ETradeAPI.Application.Validators.Products;
 using ETradeAPI.Infrastructure;
 using ETradeAPI.Infrastructure.Filters;
+using ETradeAPI.Infrastructure.Services.Storage.Local;
 using ETradeAPI.Persistance;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,7 +21,7 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
-
+builder.Services.AddStorage<LocalStorage>();
 builder.Services.AddPersistanceServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddAplicationServices();

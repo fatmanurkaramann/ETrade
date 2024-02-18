@@ -1,11 +1,10 @@
-﻿using ETradeAPI.Application.Features.Commands.Product.CreateProduct;
+﻿using ETradeAPI.Application.Abstraction.Storage;
+using ETradeAPI.Application.Features.Commands.Product.CreateProduct;
 using ETradeAPI.Application.Features.Commands.Product.RemoveProduct;
 using ETradeAPI.Application.Features.Commands.Product.UpdateProduct;
 using ETradeAPI.Application.Features.Queries.Product.GetAllProduct;
 using ETradeAPI.Application.Features.Queries.Product.GetByIdProduct;
-using ETradeAPI.Application.Services;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -19,12 +18,12 @@ namespace ETradeAPI.API.Controllers
 
         readonly IMediator _mediatr;
         private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly IFileService _fileService;
-        public ProductsController(IMediator mediatr, IWebHostEnvironment webHostEnvironment, IFileService fileService)
+        readonly IStorageService _storageService;
+        public ProductsController(IMediator mediatr, IWebHostEnvironment webHostEnvironment, IStorageService storageService)
         {
             _mediatr = mediatr;
             _webHostEnvironment = webHostEnvironment;
-            _fileService = fileService;
+            _storageService = storageService;
         }
 
         [HttpGet]
@@ -57,7 +56,7 @@ namespace ETradeAPI.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload()
         {
-            await _fileService.UploadAsync("resource/product-images", Request.Form.Files);
+            await _storageService.UploadAsync("resources/files", Request.Form.Files);
             return Ok();
         }
 
