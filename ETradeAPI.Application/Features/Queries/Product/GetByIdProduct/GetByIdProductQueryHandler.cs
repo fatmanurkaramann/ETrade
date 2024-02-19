@@ -16,7 +16,7 @@ namespace ETradeAPI.Application.Features.Queries.Product.GetByIdProduct
         {
             ETradeAPI.Domain.Entities.Product product = await _productReadRepository.GetByIdAsync(request.Id, false);
 
-            return new() { Name = product.Name, Price = product.Price, Stock = product.Stock };
+            return new() { Name = product.Name, Price = product.Price, Stock = product.Stock,Path=product.Path };
         }
     }
 }

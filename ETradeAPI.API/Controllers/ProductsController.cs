@@ -37,6 +37,7 @@ namespace ETradeAPI.API.Controllers
             GetAllProductQueryResponse res = await _mediatr.Send(req);
             return Ok(res);
         }
+
         [HttpGet("images")]
         public async Task<IActionResult> GetAllImages()
         {
@@ -45,8 +46,8 @@ namespace ETradeAPI.API.Controllers
         }
 
 
-        [HttpGet("{Id}")]
-        public async Task<IActionResult> GetProduct(string Id)
+        [HttpGet("detail")]
+        public async Task<IActionResult> GetProduct([FromQuery]string Id)
         {
             GetByIdProductQueryRequest req = new GetByIdProductQueryRequest { Id = Id };
             GetByIdProductQueryResponse res = await _mediatr.Send(req);

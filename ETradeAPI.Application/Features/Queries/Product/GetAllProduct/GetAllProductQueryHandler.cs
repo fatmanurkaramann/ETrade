@@ -35,5 +35,6 @@ namespace ETradeAPI.Application.Features.Product.Queries.GetAllProduct
 
             return new() { Products = product,TotalCount=totalCount};
         }
+
     }
 }
