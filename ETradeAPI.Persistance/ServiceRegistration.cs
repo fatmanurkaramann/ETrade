@@ -1,9 +1,13 @@
 ﻿using ETradeAPI.Application.Abstraction.Services;
 using ETradeAPI.Application.Repositories;
+using ETradeAPI.Application.Repositories.Basket;
+using ETradeAPI.Application.Repositories.BasketItem;
 using ETradeAPI.Application.Repositories.File;
 using ETradeAPI.Domain.Entities.Identity;
 using ETradeAPI.Persistance.Contexts;
 using ETradeAPI.Persistance.Repositories;
+using ETradeAPI.Persistance.Repositories.Basket;
+using ETradeAPI.Persistance.Repositories.BasketItem;
 using ETradeAPI.Persistance.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -40,6 +44,11 @@ namespace ETradeAPI.Persistance
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFileReadRepository, FileReadRepository>();
+            services.AddScoped<IBasketItemReadRepository,BasketItemReadRepository>();
+            services.AddScoped<IBasketItemWriteRepository, BasketItemWriteRepository>();
+            services.AddScoped<IBasketReadRepository, BasketReadRepository>();
+            services.AddScoped<IBasketWriteRepository, BasketWriteRepository>();
+
 
 
         }
