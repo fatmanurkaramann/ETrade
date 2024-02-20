@@ -11,6 +11,7 @@ namespace ETradeAPI.Domain.Entities
         public ICollection<Order> Orders { get; set; }
         public string? FileName { get; set; }
         public string? Path { get; set; }
+        public ICollection<BasketItem> BasketItems { get; set; }
 
     }
 }
