@@ -8,5 +8,7 @@ namespace ETradeAPI.Application.ViewModels.Basket
 {
     public class CreateBasketVM
     {
+        public string ProductId { get; set; }
+        public int Quantity { get; set; }
     }
 }

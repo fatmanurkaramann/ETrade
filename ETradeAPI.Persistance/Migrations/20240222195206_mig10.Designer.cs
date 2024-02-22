@@ -3,6 +3,7 @@ using System;
 using ETradeAPI.Persistance.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ETradeAPI.Persistance.Migrations
 {
     [DbContext(typeof(ETradeAPIDbContext))]
-    partial class ETradeAPIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240222195206_mig10")]
+    partial class mig10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,11 +224,15 @@ namespace ETradeAPI.Persistance.Migrations
             modelBuilder.Entity("ETradeAPI.Domain.Entities.Order", b =>
                 {
                     b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("BasketId")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
@@ -242,6 +248,9 @@ namespace ETradeAPI.Persistance.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BasketId")
+                        .IsUnique();
 
                     b.HasIndex("CustomerId");
 
@@ -434,15 +443,15 @@ namespace ETradeAPI.Persistance.Migrations
 
             modelBuilder.Entity("ETradeAPI.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("ETradeAPI.Domain.Entities.Customer", "Customer")
-                        .WithMany("Orders")
-                        .HasForeignKey("CustomerId")
+                    b.HasOne("ETradeAPI.Domain.Entities.Basket", "Basket")
+                        .WithOne("Order")
+                        .HasForeignKey("ETradeAPI.Domain.Entities.Order", "BasketId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ETradeAPI.Domain.Entities.Basket", "Basket")
-                        .WithOne("Order")
-                        .HasForeignKey("ETradeAPI.Domain.Entities.Order", "Id")
+                    b.HasOne("ETradeAPI.Domain.Entities.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

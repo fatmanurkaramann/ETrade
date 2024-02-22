@@ -10,6 +10,5 @@ namespace ETradeAPI.Domain.Entities
         public Customer Customer { get; set; }
         public ICollection<Product> Products { get; set; }
         public Basket Basket { get; set; }
-        public Guid BasketId { get; set; }
     }
 }

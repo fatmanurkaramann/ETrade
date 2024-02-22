@@ -19,9 +19,9 @@ namespace ETradeAPI.Persistance.Contexts
         public DbSet<BasketItem> BasketItems { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Basket>().HasKey(b => b.Id);
+            builder.Entity<Order>().HasKey(b => b.Id);
             builder.Entity<Basket>().HasOne(b => b.Order).WithOne(o => o.Basket)
-                .HasForeignKey<Basket>(b => b.OrderId);
+                .HasForeignKey<Order>(b => b.Id);
             //bire-bir ilişki
             base.OnModelCreating(builder);
         }
