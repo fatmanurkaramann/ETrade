@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ETradeAPI.Application.ViewModels.Basket
 {
-    internal class CreateBasketVM
+    public class CreateBasketVM
     {
     }
 }
