@@ -17,6 +17,14 @@ namespace ETradeAPI.Persistance.Contexts
         public DbSet<ETradeAPI.Domain.Entities.File> Files { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Basket>().HasKey(b => b.Id);
+            builder.Entity<Basket>().HasOne(b => b.Order).WithOne(o => o.Basket)
+                .HasForeignKey<Basket>(b => b.OrderId);
+            //bire-bir ilişki
+            base.OnModelCreating(builder);
+        }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
