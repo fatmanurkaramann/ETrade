@@ -21,6 +21,7 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddStorage<LocalStorage>();
 builder.Services.AddPersistanceServices();
 builder.Services.AddInfrastructureServices();
