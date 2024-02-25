@@ -43,10 +43,6 @@ C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.Contracts.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\EntityFramework.SqlServer.dll
-C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\EntityFramework.dll
-C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
-C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
