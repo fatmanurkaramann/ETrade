@@ -92,14 +92,24 @@ namespace ETradeAPI.Persistance.Services
             return result.BasketItems.ToList();
         }
 
-        public Task RemoveBasketItemAsync(string id)
+        public async Task RemoveBasketItemAsync(string id)
         {
-            throw new NotImplementedException();
+            BasketItem? basketItem = await _basketItemReadRepository.GetByIdAsync(id);
+            if(basketItem is not null)
+            {
+                _basketItemWriteRepository.Remove(basketItem);
+                await _basketItemWriteRepository.SaveAsync();
+            }
         }
 
-        public Task UpdateQuantityAsync(UpdateBasketVM basketItem)
+        public async Task UpdateQuantityAsync(UpdateBasketVM basketItem)
         {
-            throw new NotImplementedException();
+            BasketItem? _basketItem = await _basketItemReadRepository.GetByIdAsync(basketItem.BasketItemId);
+            if(_basketItem is not null)
+            {
+                _basketItem.Quantity=basketItem.Quantity;
+                await _basketItemWriteRepository.SaveAsync();
+            }
         }
     }
 }

@@ -49,6 +49,9 @@ namespace ETradeAPI.Persistance
             services.AddScoped<IBasketReadRepository, BasketReadRepository>();
             services.AddScoped<IBasketWriteRepository, BasketWriteRepository>();
 
+            services.AddScoped<IBasketService, BasketService>();
+
+
 
 
         }
