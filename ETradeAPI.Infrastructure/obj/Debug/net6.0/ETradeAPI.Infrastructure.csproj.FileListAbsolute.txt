@@ -17,3 +17,5 @@ C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\obj
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\obj\Debug\net6.0\ref\ETradeAPI.Infrastructure.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\bin\Debug\net6.0\ETradeAPI.Persistance.dll
 C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\bin\Debug\net6.0\ETradeAPI.Persistance.pdb
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\bin\Debug\net6.0\ETradeAPI.Infrastructure.runtimeconfig.json
+C:\Users\fato\Desktop\Yazılım\C#\ETrade\ETradeAPI\ETradeAPI.Infrastructure\obj\Debug\net6.0\ETradeAPI.Infrastructure.genruntimeconfig.cache

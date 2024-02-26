@@ -13,6 +13,6 @@ namespace ETradeAPI.Domain.Entities
         public Guid ProductId { get; set; }
         public Basket Basket { get; set; }
         public Product Product { get; set; }
-        public float Quantity { get; set; }
+        public int Quantity { get; set; }
     }
 }
