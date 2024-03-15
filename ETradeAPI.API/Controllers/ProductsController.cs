@@ -8,6 +8,7 @@ using ETradeAPI.Application.Repositories;
 using ETradeAPI.Application.Repositories.File;
 using ETradeAPI.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
