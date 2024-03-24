@@ -32,7 +32,7 @@ namespace ETradeAPI.Persistance.Services
         private async Task<Basket?> ContextUser()
         {
             var userName = _httpContextAccessor?.HttpContext?.User?.Identity?.Name;
-            if (string.IsNullOrEmpty(userName))
+            if (!string.IsNullOrEmpty(userName))
             {
                 AppUser user =
                      await _userManager.Users.Include(u => u.Baskets).FirstOrDefaultAsync(u => u.UserName == userName);

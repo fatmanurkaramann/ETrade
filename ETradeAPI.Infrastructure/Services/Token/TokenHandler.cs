@@ -1,10 +1,12 @@
 ﻿using ETradeAPI.Application.Abstraction.Token;
+using ETradeAPI.Domain.Entities.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +21,7 @@ namespace ETradeAPI.Infrastructure.Services.Token
             _configuration = configuration;
         }
 
-        public Application.DTOs.Token CreateAccessToken(int minute)
+        public Application.DTOs.Token CreateAccessToken(int minute,AppUser user)
         {
             Application.DTOs.Token token = new Application.DTOs.Token();
 
@@ -37,7 +39,8 @@ namespace ETradeAPI.Infrastructure.Services.Token
                 issuer: _configuration["Token:Issuer"],
                 expires:token.Expiration,
                 notBefore:DateTime.UtcNow,
-                signingCredentials:signingCredentials
+                signingCredentials:signingCredentials,
+                claims:new List<Claim> { new(ClaimTypes.Name,user.UserName)}
                 );
 
             //token oluşturucu sınıfından örnek alalım

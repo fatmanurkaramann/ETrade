@@ -48,7 +48,7 @@ namespace ETradeAPI.Application.Features.Commands.AppUserFeatures.GoogleLogin
             else
                 throw new Exception("Invalid external auth");
 
-            return new() { Token = _tokenHandler.CreateAccessToken(15) };
+            return new() { Token = _tokenHandler.CreateAccessToken(15,user) };
         }
     }
 }
