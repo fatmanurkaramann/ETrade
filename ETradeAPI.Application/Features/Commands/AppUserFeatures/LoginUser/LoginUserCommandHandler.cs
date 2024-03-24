@@ -38,7 +38,7 @@ namespace ETradeAPI.Application.Features.Commands.AppUserFeatures.LoginUser
             if (result.Succeeded)
             {
                 //yetki
-              Token token = _tokenHandler.CreateAccessToken(5,user);
+              Token token = _tokenHandler.CreateAccessToken(600,user);
                 return new() { Token = token };
             }
             return new() { Message="Hata!"};

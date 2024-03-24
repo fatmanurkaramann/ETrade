@@ -38,7 +38,7 @@ namespace ETradeAPI.API.Controllers
             UpdateQuantityCommandResponse res = await _mediatr.Send(request);
             return Ok(res);
         }
-        [HttpDelete("{BasketItemId}")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> RemoveBasketItem([FromRoute] RemoveBasketItemCommandRequest request)
         {
             var res = await _mediatr.Send(request);

@@ -19,7 +19,7 @@ namespace ETradeAPI.Application.Features.Commands.Basket.RemoveBasketItem
 
         public async Task<RemoveBasketItemCommandResponse> Handle(RemoveBasketItemCommandRequest request, CancellationToken cancellationToken)
         {
-            await _basketService.RemoveBasketItemAsync(request.BasketItemId);
+            await _basketService.RemoveBasketItemAsync(request.Id);
             return new();
         }
     }
