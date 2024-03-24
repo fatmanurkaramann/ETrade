@@ -20,7 +20,7 @@ namespace ETradeAPI.Persistance.Services
         readonly IBasketItemWriteRepository _basketItemWriteRepository;
         readonly IBasketItemReadRepository _basketItemReadRepository;
         readonly IBasketReadRepository _basketReadRepository;
-        public BasketService(IHttpContextAccessor httpContextAccessor, UserManager<AppUser> userManager, IOrderReadRepository orderReadRepository, IBasketWriteRepository basketWriteRepository, IBasketItemWriteRepository basketItemWriteRepository, IBasketReadRepository basketReadRepository)
+        public BasketService(IHttpContextAccessor httpContextAccessor, UserManager<AppUser> userManager, IOrderReadRepository orderReadRepository, IBasketWriteRepository basketWriteRepository, IBasketItemWriteRepository basketItemWriteRepository, IBasketReadRepository basketReadRepository, IBasketItemReadRepository basketItemReadRepository)
         {
             _httpContextAccessor = httpContextAccessor;
             _userManager = userManager;
@@ -28,6 +28,7 @@ namespace ETradeAPI.Persistance.Services
             _basketWriteRepository = basketWriteRepository;
             _basketItemWriteRepository = basketItemWriteRepository;
             _basketReadRepository = basketReadRepository;
+            _basketItemReadRepository = basketItemReadRepository;
         }
         private async Task<Basket?> ContextUser()
         {
@@ -63,12 +64,20 @@ namespace ETradeAPI.Persistance.Services
         }
         public async Task AddItemToBasketAsync(CreateBasketVM basketItem)
         {
-            Basket basket = await ContextUser();
-            if (basket is not null)
+            Basket? basket = await ContextUser();
+            if (basket != null)
             {
-                BasketItem _basketItem = await _basketItemReadRepository.GetSingleAsync(b => b.BasketId == basket.Id && b.ProductId ==
-                Guid.Parse(basketItem.ProductId));
-                if (_basketItem is not null)
+                BasketItem _basketItem = null;
+                try
+                {
+                    _basketItem = await _basketItemReadRepository.GetSingleAsync(bi => bi.BasketId == basket.Id && bi.ProductId == Guid.Parse(basketItem.ProductId));
+                }
+                catch (Exception ex)
+                {
+                    // Hata durumunu ele al
+                    Console.WriteLine("GetSingleAsync metodu çağrılırken bir hata oluştu: " + ex.Message);
+                }
+                if (_basketItem != null)
                     _basketItem.Quantity++;
                 else
                     await _basketItemWriteRepository.AddAsync(new()
@@ -77,11 +86,10 @@ namespace ETradeAPI.Persistance.Services
                         ProductId = Guid.Parse(basketItem.ProductId),
                         Quantity = basketItem.Quantity
                     });
-                await _basketItemWriteRepository.SaveAsync();
 
+                await _basketItemWriteRepository.SaveAsync();
             }
         }
-
         public async Task<List<BasketItem>> GetBasketItemsAsync()
         {
             Basket basket = await ContextUser();
