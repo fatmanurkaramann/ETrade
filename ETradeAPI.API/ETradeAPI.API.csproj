@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ETradeAPI.Infrastructure\ETradeAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\ETradeAPI.Persistance\ETradeAPI.Persistance.csproj" />
+    <ProjectReference Include="..\ETradeAPI.Signalr\ETradeAPI.Signalr.csproj" />
   </ItemGroup>
 
   <ItemGroup>

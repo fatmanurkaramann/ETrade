@@ -5,6 +5,7 @@ using ETradeAPI.Infrastructure;
 using ETradeAPI.Infrastructure.Filters;
 using ETradeAPI.Infrastructure.Services.Storage.Local;
 using ETradeAPI.Persistance;
+using ETradeAPI.Signalr;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpLogging;
@@ -33,6 +34,7 @@ builder.Services.AddStorage<LocalStorage>();
 builder.Services.AddPersistanceServices();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddAplicationServices();
+builder.Services.AddSignalrServices();
 
 Logger log = new LoggerConfiguration()
                  .WriteTo.Console()
@@ -110,5 +112,6 @@ app.UseSerilogRequestLogging();
 
 
 app.MapControllers();
+app.MapHubs();
 
 app.Run();
