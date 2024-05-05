@@ -24,11 +24,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll",
         builder =>
         {
-            builder.AllowAnyOrigin()
+            builder.WithOrigins("http://localhost:4200") // Specify the allowed origin
                    .AllowAnyMethod()
-                   .AllowAnyHeader();
+                   .AllowAnyHeader()
+                   .AllowCredentials(); // Allow credentials in the CORS request
         });
 });
+
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddStorage<LocalStorage>();
 builder.Services.AddPersistanceServices();
