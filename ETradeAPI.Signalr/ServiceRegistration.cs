@@ -14,6 +14,8 @@ namespace ETradeAPI.Signalr
         public static void AddSignalrServices(this IServiceCollection services)
         {
             services.AddTransient<IProductHubService, ProductHubService>();
+            services.AddTransient<IOrderHubService, OrderHubService>();
+
             services.AddSignalR();
         }
     }
