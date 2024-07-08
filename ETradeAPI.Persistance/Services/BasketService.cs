@@ -96,14 +96,14 @@ namespace ETradeAPI.Persistance.Services
             Basket? result = await _basketReadRepository.Table
               .Include(b => b.BasketItems)
               .ThenInclude(bi => bi.Product)
-                 .FirstOrDefaultAsync(b=>b.Id==basket.Id);
+                 .FirstOrDefaultAsync(b => b.Id == basket.Id);
             return result.BasketItems.ToList();
         }
 
         public async Task RemoveBasketItemAsync(string id)
         {
             BasketItem? basketItem = await _basketItemReadRepository.GetByIdAsync(id);
-            if(basketItem is not null)
+            if (basketItem is not null)
             {
                 _basketItemWriteRepository.Remove(basketItem);
                 await _basketItemWriteRepository.SaveAsync();
@@ -113,10 +113,19 @@ namespace ETradeAPI.Persistance.Services
         public async Task UpdateQuantityAsync(UpdateBasketVM basketItem)
         {
             BasketItem? _basketItem = await _basketItemReadRepository.GetByIdAsync(basketItem.BasketItemId);
-            if(_basketItem is not null)
+            if (_basketItem is not null)
             {
-                _basketItem.Quantity=basketItem.Quantity;
+                _basketItem.Quantity = basketItem.Quantity;
                 await _basketItemWriteRepository.SaveAsync();
+            }
+        }
+
+        public Basket? GetUserActiveBasket
+        {
+            get
+            {
+                Basket basket = ContextUser().Result;
+                return basket;
             }
         }
     }

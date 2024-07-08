@@ -14,5 +14,6 @@ namespace ETradeAPI.Application.Abstraction.Services
         public Task AddItemToBasketAsync(CreateBasketVM basketItem);
         public Task UpdateQuantityAsync(UpdateBasketVM basketItem);
         public Task RemoveBasketItemAsync(string id);
+        public Basket? GetUserActiveBasket { get; }
     }
 }

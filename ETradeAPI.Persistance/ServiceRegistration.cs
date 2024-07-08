@@ -42,16 +42,14 @@ namespace ETradeAPI.Persistance
             services.AddScoped<IProductWriteRepository, ProductWriteRepository>();
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<IOrderReadRepository, OrderReadRepository>();
-            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IFileReadRepository, FileReadRepository>();
             services.AddScoped<IBasketItemReadRepository,BasketItemReadRepository>();
             services.AddScoped<IBasketItemWriteRepository, BasketItemWriteRepository>();
             services.AddScoped<IBasketReadRepository, BasketReadRepository>();
             services.AddScoped<IBasketWriteRepository, BasketWriteRepository>();
-
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBasketService, BasketService>();
-
-
+            services.AddScoped<IOrderService, OrderService>();
 
 
         }

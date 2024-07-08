@@ -3,7 +3,6 @@ using ETradeAPI.Application.Features.Commands.Product.CreateProduct;
 using ETradeAPI.Application.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Http;
-using System.Data;
 
 namespace ETradeAPI.Application.Features.Product.Commands.CreateProduct
 {
