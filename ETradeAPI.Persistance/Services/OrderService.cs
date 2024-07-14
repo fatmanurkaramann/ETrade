@@ -19,7 +19,7 @@ namespace ETradeAPI.Persistance.Services
             {
                 Address = order.Address,
                 Description = order.Description,
-                BasketId=Guid.Parse(order.BasketId)
+                Id=Guid.Parse(order.BasketId)
             });
             await _orderWriteRepository.SaveAsync();
 
